@@ -83,9 +83,9 @@ function App() {
         const neighbors = findNeighbors(matrix, y, x);
         const happySad = neighbors.happy + neighbors.sad;
         if (matrix[y][x] === 0) {
-          if (neighbors.sad >= 3 && neighbors.sad > neighbors.happy) {
+          if (neighbors.sad <= 3 && neighbors.sad > neighbors.happy) {
             newMatrix[y][x] = 1;
-          } else if (neighbors.happy >= 3 && neighbors.happy > neighbors.sad) {
+          } else if (neighbors.happy <= 3 && neighbors.happy > neighbors.sad) {
             newMatrix[y][x] = 2;
           }
         } else {
